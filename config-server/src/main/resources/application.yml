@@ -1,0 +1,13 @@
+server:
+  port: 8888 # Standard Config Server port
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native # Tells it to use local files instead of Git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config-repo # The folder where we will put the files

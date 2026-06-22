@@ -1,48 +1,75 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Manage Loans</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Lending Desk</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; }
+        .portal-header { background: #2c3e50; padding: 15px; text-align: right; }
+        .portal-header a { color: white; text-decoration: none; font-weight: bold; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #34495e; }
+        .form-group input { width: 100%; padding: 0.5rem; border: 1px solid #bdc3c7; border-radius: 4px; box-sizing: border-box; }
+        .btn { background-color: #2ecc71; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn:hover { background-color: #27ae60; }
+        .alert-error { background-color: #e74c3c; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #34495e; color: white; }
+    </style>
 </head>
-<body class="bg-light">
-<div class="container mt-5">
-    <h2>Library Loans</h2>
-    <hr>
-    <table class="table table-striped bg-white shadow-sm">
-        <thead class="table-dark">
-        <tr>
-            <th>ID</th>
-            <th>User ID</th>
-            <th>Book ID</th>
-            <th>Loan Date</th>
-            <th>Return Date</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="loan : ${loans}">
-            <td th:text="${loan.id}"></td>
-            <td th:text="${loan.userId}"></td>
-            <td th:text="${loan.bookId}"></td>
-            <td th:text="${loan.loanDate}"></td>
-            <td th:text="${loan.returnDate != null ? loan.returnDate : 'Not Returned'}"></td>
-        </tr>
-        </tbody>
-    </table>
+<body>
 
-    <div th:if="${totalPages > 1}" class="d-flex justify-content-between align-items-center mt-3">
-        <div>Total Loans: [[${totalItems}]]</div>
-        <div>
-            <span th:each="i: ${#numbers.sequence(1, totalPages)}">
-                <a th:if="${currentPage != i}" th:href="@{'/loans?pageNo=' + ${i} + '&sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}" class="btn btn-sm btn-outline-primary">[[${i}]]</a>
-                <span th:unless="${currentPage != i}" class="btn btn-sm btn-primary">[[${i}]]</span>
-            </span>
-        </div>
-        <div>
-            Sort by:
-            <a th:href="@{'/loans?pageNo=' + ${currentPage} + '&sortField=loanDate&sortDir=' + ${reverseSortDir}}" class="text-decoration-none">Loan Date</a> |
-            <a th:href="@{'/loans?pageNo=' + ${currentPage} + '&sortField=returnDate&sortDir=' + ${reverseSortDir}}" class="text-decoration-none">Return Date</a>
-        </div>
+<div class="portal-header">
+    <a href="http://localhost:8080/">Back to Portal</a>
+</div>
+
+<div class="container">
+    <h2>📚 Lending Desk Operations</h2>
+
+    <div class="alert-error" th:if="${errorMessage}" th:text="${errorMessage}">
+        Error messages will appear here.
+    </div>
+
+    <div class="card">
+        <h3>Issue a New Loan</h3>
+        <form th:action="@{/loans}" method="POST">
+            <div class="form-group">
+                <label for="userId">User ID:</label>
+                <input type="number" id="userId" name="userId" placeholder="Enter Member's User ID" required>
+            </div>
+            <div class="form-group">
+                <label for="bookId">Book ID:</label>
+                <input type="number" id="bookId" name="bookId" placeholder="Enter Catalog Book ID" required>
+            </div>
+            <button type="submit" class="btn">Confirm Loan Checkout</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Active System Loans</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Loan ID</th>
+                <th>User ID</th>
+                <th>Book ID</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="loan : ${loans}">
+                <td th:text="${loan.id}">1</td>
+                <td th:text="${loan.userId}">101</td>
+                <td th:text="${loan.bookId}">502</td>
+                <td><span style="color: #2ecc71; font-weight: bold;">Active</span></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+
 </body>
 </html>

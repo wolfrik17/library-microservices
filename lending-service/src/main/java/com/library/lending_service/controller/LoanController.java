@@ -2,39 +2,50 @@ package com.library.lending_service.controller;
 
 import com.library.lending_service.entity.Loan;
 import com.library.lending_service.service.LoanService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/loans")
-@RequiredArgsConstructor
 public class LoanController {
 
     private final LoanService loanService;
 
+    public LoanController(LoanService loanService) {
+        this.loanService = loanService;
+    }
+
+    // 1. Display the page with the form and the table
     @GetMapping
-    public String viewLoans(
-            @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
-            @RequestParam(value = "sortField", defaultValue = "loanDate") String sortField,
-            @RequestParam(value = "sortDir", defaultValue = "desc") String sortDir,
-            Model model) {
+    public String viewLoansPage(Model model, @ModelAttribute("errorMessage") String errorMessage) {
+        model.addAttribute("loans", loanService.getAllLoans());
+        if (errorMessage != null && !errorMessage.isEmpty()) {
+            model.addAttribute("errorMessage", errorMessage);
+        }
+        return "loans";
+    }
 
-        int pageSize = 5;
-        Page<Loan> page = loanService.findPaginated(pageNo, pageSize, sortField, sortDir);
+    // 2. Accept form submissions from the user interface
+    @PostMapping
+    public String createLoanFromForm(@RequestParam Long userId,
+                                     @RequestParam Long bookId,
+                                     RedirectAttributes redirectAttributes) {
+        try {
+            Loan newLoan = new Loan();
+            newLoan.setUserId(userId);
+            newLoan.setBookId(bookId);
 
-        model.addAttribute("currentPage", pageNo);
-        model.addAttribute("totalPages", page.getTotalPages());
-        model.addAttribute("totalItems", page.getTotalElements());
-        model.addAttribute("sortField", sortField);
-        model.addAttribute("sortDir", sortDir);
-        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+            // This invokes your business logic containing the OpenFeign client check
+            loanService.createLoan(newLoan);
 
-        model.addAttribute("loans", page.getContent());
-        return "loans"; // Maps to loans.html
+        } catch (Exception e) {
+            // If OpenFeign throws an exception because user/book doesn't exist, pass the error message back safely
+            redirectAttributes.addFlashAttribute("errorMessage", "Failed to issue loan: " + e.getMessage());
+        }
+
+        // Refresh the page cleanly via redirect to show updated data or errors
+        return "redirect:/loans";
     }
 }

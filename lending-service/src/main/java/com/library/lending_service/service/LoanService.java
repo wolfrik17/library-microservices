@@ -3,6 +3,7 @@ package com.library.lending_service.service;
 import com.library.lending_service.entity.Loan;
 import com.library.lending_service.exception.ResourceNotFoundException;
 import com.library.lending_service.repository.LoanRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
@@ -20,21 +21,25 @@ import java.util.List;
 public class LoanService {
 
     private final LoanRepository loanRepository;
-    private final UserClient userClient; // Inject the Feign Client
+    private final UserClient userClient;
 
+    @CircuitBreaker(name = "userClientBreaker", fallbackMethod = "createLoanFallback")
     public Loan createLoan(Loan loan) {
-        // 1. Feign Call: Verify the user exists in the User Service
-        try {
-            userClient.getUserById(loan.getUserId());
-        } catch (FeignException.NotFound e) {
-            throw new ResourceNotFoundException("Cannot create loan. User ID " + loan.getUserId() + " does not exist in User Service!");
-        }
+        userClient.getUserById(loan.getUserId());
 
-        // 2. Standard logic
         if (loan.getLoanDate() == null) {
             loan.setLoanDate(LocalDate.now());
         }
         return loanRepository.save(loan);
+    }
+
+    // Fallback logic
+    public Loan createLoanFallback(Loan loan, Throwable t) {
+        // Log the actual cause for debugging
+        System.err.println("Circuit Breaker triggered. Reason: " + t.getMessage());
+
+        // Return a response that the controller can interpret as a service failure
+        throw new RuntimeException("User verification service is currently unreachable.");
     }
 
     // Read All

@@ -5,6 +5,11 @@ import com.library.catalog_service.exception.ResourceNotFoundException;
 import com.library.catalog_service.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+
 
 import java.util.List;
 
@@ -42,5 +47,13 @@ public class BookService {
     public void deleteBook(Long id) {
         Book book = getBookById(id);
         bookRepository.delete(book);
+    }
+
+    public Page<Book> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+                Sort.by(sortField).descending();
+
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
+        return bookRepository.findAll(pageable);
     }
 }

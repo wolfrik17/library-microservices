@@ -5,6 +5,10 @@ import com.library.lending_service.exception.ResourceNotFoundException;
 import com.library.lending_service.repository.LoanRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -52,5 +56,13 @@ public class LoanService {
     public void deleteLoan(Long id) {
         Loan loan = getLoanById(id);
         loanRepository.delete(loan);
+    }
+
+    public Page<Loan> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+                Sort.by(sortField).descending();
+
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
+        return loanRepository.findAll(pageable);
     }
 }

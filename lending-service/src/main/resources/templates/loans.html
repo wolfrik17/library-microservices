@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Loans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2>Library Loans</h2>
+    <hr>
+    <table class="table table-striped bg-white shadow-sm">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Book ID</th>
+            <th>Loan Date</th>
+            <th>Return Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="loan : ${loans}">
+            <td th:text="${loan.id}"></td>
+            <td th:text="${loan.userId}"></td>
+            <td th:text="${loan.bookId}"></td>
+            <td th:text="${loan.loanDate}"></td>
+            <td th:text="${loan.returnDate != null ? loan.returnDate : 'Not Returned'}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${totalPages > 1}" class="d-flex justify-content-between align-items-center mt-3">
+        <div>Total Loans: [[${totalItems}]]</div>
+        <div>
+            <span th:each="i: ${#numbers.sequence(1, totalPages)}">
+                <a th:if="${currentPage != i}" th:href="@{'/loans?pageNo=' + ${i} + '&sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}" class="btn btn-sm btn-outline-primary">[[${i}]]</a>
+                <span th:unless="${currentPage != i}" class="btn btn-sm btn-primary">[[${i}]]</span>
+            </span>
+        </div>
+        <div>
+            Sort by:
+            <a th:href="@{'/loans?pageNo=' + ${currentPage} + '&sortField=loanDate&sortDir=' + ${reverseSortDir}}" class="text-decoration-none">Loan Date</a> |
+            <a th:href="@{'/loans?pageNo=' + ${currentPage} + '&sortField=returnDate&sortDir=' + ${reverseSortDir}}" class="text-decoration-none">Return Date</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

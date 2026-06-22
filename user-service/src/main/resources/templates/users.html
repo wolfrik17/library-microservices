@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2>User Management</h2>
+    <hr>
+    <table class="table table-striped bg-white shadow-sm">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.role}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${totalPages > 1}" class="d-flex justify-content-between align-items-center mt-3">
+        <div>Total Users: [[${totalItems}]]</div>
+        <div>
+            <span th:each="i: ${#numbers.sequence(1, totalPages)}">
+                <a th:if="${currentPage != i}" th:href="@{'/users?pageNo=' + ${i} + '&sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}" class="btn btn-sm btn-outline-primary">[[${i}]]</a>
+                <span th:unless="${currentPage != i}" class="btn btn-sm btn-primary">[[${i}]]</span>
+            </span>
+        </div>
+        <div>
+            Sort by:
+            <a th:href="@{'/users?pageNo=' + ${currentPage} + '&sortField=username&sortDir=' + ${reverseSortDir}}" class="text-decoration-none">Username</a> |
+            <a th:href="@{'/users?pageNo=' + ${currentPage} + '&sortField=role&sortDir=' + ${reverseSortDir}}" class="text-decoration-none">Role</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

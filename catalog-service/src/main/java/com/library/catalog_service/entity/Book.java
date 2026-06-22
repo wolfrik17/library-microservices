@@ -3,6 +3,8 @@ package com.library.catalog_service.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "books")
@@ -16,7 +18,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Title is mandatory")
     private String title;
+
+    @NotBlank(message = "ISBN is mandatory")
+    @Size(min = 10, max = 13, message = "ISBN must be between 10 and 13 characters")
     private String isbn;
 
     @ManyToOne

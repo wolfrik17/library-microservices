@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import com.library.lending_service.client.UserClient;
+import feign.FeignException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -18,10 +20,17 @@ import java.util.List;
 public class LoanService {
 
     private final LoanRepository loanRepository;
+    private final UserClient userClient; // Inject the Feign Client
 
-    // Create (Borrow a book)
     public Loan createLoan(Loan loan) {
-        // Business logic: Set loan date to today if not provided
+        // 1. Feign Call: Verify the user exists in the User Service
+        try {
+            userClient.getUserById(loan.getUserId());
+        } catch (FeignException.NotFound e) {
+            throw new ResourceNotFoundException("Cannot create loan. User ID " + loan.getUserId() + " does not exist in User Service!");
+        }
+
+        // 2. Standard logic
         if (loan.getLoanDate() == null) {
             loan.setLoanDate(LocalDate.now());
         }

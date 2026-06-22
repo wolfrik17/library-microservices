@@ -1,0 +1,13 @@
+server:
+  port: 8761 # The standard Eureka port
+
+spring:
+  application:
+    name: discovery-server
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # Tells Eureka not to register itself in its own phonebook
+    fetch-registry: false

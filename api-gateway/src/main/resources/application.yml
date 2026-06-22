@@ -1,5 +1,5 @@
 server:
-  port: 8080 # The standard port for the single entry point
+  port: 8080
 
 spring:
   application:
@@ -8,28 +8,16 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true # Automatically creates routes based on Eureka IDs
+          enabled: true
           lower-case-service-id: true
-      routes:
-        # 1. Route for User Service
-        - id: user-service-route
-          uri: lb://user-service # 'lb://' tells it to use Eureka for Load Balancing
-          predicates:
-            - Path=/users/**, /login/**, /api/users/**
-
-        # 2. Route for Catalog Service
-        - id: catalog-service-route
-          uri: lb://catalog-service
-          predicates:
-            - Path=/books/**
-
-        # 3. Route for Lending Service
-        - id: lending-service-route
-          uri: lb://lending-service
-          predicates:
-            - Path=/loans/**
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ # Points to your Eureka Server
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE

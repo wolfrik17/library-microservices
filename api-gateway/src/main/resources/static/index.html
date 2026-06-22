@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Microservices Portal</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; }
+        .navbar { background-color: #2c3e50; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .navbar h1 { margin: 0; font-size: 1.5rem; }
+        .container { max-width: 1000px; margin: 3rem auto; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h2 { color: #34495e; margin-top: 0; }
+        .card p { color: #7f8c8d; margin-bottom: 2rem; }
+        .btn { background-color: #3498db; color: white; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: bold; display: inline-block; }
+        .btn:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>📚 Central Library Portal</h1>
+    <div>Welcome, Admin</div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Book Catalog</h2>
+        <p>Search, add, and manage library books across the system.</p>
+        <a href="/books" class="btn">Manage Books</a>
+    </div>
+
+    <div class="card">
+        <h2>Lending Desk</h2>
+        <p>Issue new book loans and manage existing checkouts.</p>
+        <a href="/loans" class="btn">Manage Loans</a>
+    </div>
+
+    <div class="card">
+        <h2>User Administration</h2>
+        <p>Secure area to manage library members and access levels.</p>
+        <a href="/users" class="btn">Manage Users</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -3885,3 +3885,161 @@ com.library.user_service.controller.UserApiController#getUserForFeign(Long) mapp
 2026-06-23 01:56:11 [RMI TCP Connection(3)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
 2026-06-23 01:56:56 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2026-06-23 01:57:06 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 02:00:53 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application LENDING-SERVICE with eureka with status DOWN
+2026-06-23 02:00:53 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1782169253438, current=DOWN, previous=UP]
+2026-06-23 02:00:53 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083: registering service...
+2026-06-23 02:00:53 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-23 02:00:53 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-06-23 02:00:53 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083 - registration status: 204
+2026-06-23 02:00:53 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23 02:00:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-23 02:00:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-23 02:00:53 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-06-23 02:00:56 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-06-23 02:00:56 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083 - deregister  status: 200
+2026-06-23 02:00:56 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-06-23 02:01:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-06-23 02:01:02 [main] INFO  c.l.l.LendingServiceApplication - Starting LendingServiceApplication using Java 21.0.11 with PID 13676 (C:\Users\Wolfrik\IdeaProjects\library-microservices\lending-service\target\classes started by Wolfrik in C:\Users\Wolfrik\IdeaProjects\library-microservices)
+2026-06-23 02:01:02 [main] DEBUG c.l.l.LendingServiceApplication - Running with Spring Boot v4.1.0, Spring v7.0.8
+2026-06-23 02:01:02 [main] INFO  c.l.l.LendingServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-23 02:01:02 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-06-23 02:01:02 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=lending-service, profiles=[default], label=null, version=null, state=null
+2026-06-23 02:01:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-23 02:01:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 1 JPA repository interface.
+2026-06-23 02:01:04 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=b7d060f0-4b59-3fa1-b706-7886d18a47b9
+2026-06-23 02:01:04 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2026-06-23 02:01:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2026-06-23 02:01:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-23 02:01:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-23 02:01:04 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1914 ms
+2026-06-23 02:01:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-23 02:01:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:54d87bc0-7c38-4043-b55b-2fb39a76ecc1 user=SA
+2026-06-23 02:01:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-23 02:01:05 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23 02:01:05 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-23 02:01:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-23 02:01:05 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:54d87bc0-7c38-4043-b55b-2fb39a76ecc1]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 54D87BC0-7C38-4043-B55B-2FB39A76ECC1/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23 02:01:06 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23 02:01:06 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23 02:01:06 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-23 02:01:07 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23 02:01:07 [main] INFO  o.s.c.o.FeignClientFactoryBean - For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2026-06-23 02:01:07 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-06-23 02:01:07 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-23 02:01:07 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-23 02:01:07 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-06-23 02:01:07 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-06-23 02:01:07 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-06-23 02:01:08 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-06-23 02:01:08 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-06-23 02:01:08 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-23 02:01:08 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1782169268301 with initial instances count: 3
+2026-06-23 02:01:08 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application LENDING-SERVICE with eureka with status UP
+2026-06-23 02:01:08 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1782169268305, current=UP, previous=STARTING]
+2026-06-23 02:01:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2026-06-23 02:01:08 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083: registering service...
+2026-06-23 02:01:08 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+2026-06-23 02:01:08 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8083
+2026-06-23 02:01:08 [main] INFO  c.l.l.LendingServiceApplication - Started LendingServiceApplication in 6.86 seconds (process running for 7.931)
+2026-06-23 02:01:08 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083 - registration status: 204
+2026-06-23 02:01:08 [RMI TCP Connection(4)-192.168.1.131] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23 02:01:08 [RMI TCP Connection(4)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-23 02:01:08 [RMI TCP Connection(4)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-06-23 02:01:10 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 02:01:56 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 02:03:32 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application LENDING-SERVICE with eureka with status DOWN
+2026-06-23 02:03:32 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1782169412671, current=DOWN, previous=UP]
+2026-06-23 02:03:32 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083: registering service...
+2026-06-23 02:03:32 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-23 02:03:32 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-06-23 02:03:32 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083 - registration status: 204
+2026-06-23 02:03:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23 02:03:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-23 02:03:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-23 02:03:32 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-06-23 02:03:35 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-06-23 02:03:35 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083 - deregister  status: 200
+2026-06-23 02:03:35 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-06-23 02:03:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-06-23 02:03:44 [main] INFO  c.l.l.LendingServiceApplication - Starting LendingServiceApplication using Java 21.0.11 with PID 6012 (C:\Users\Wolfrik\IdeaProjects\library-microservices\lending-service\target\classes started by Wolfrik in C:\Users\Wolfrik\IdeaProjects\library-microservices)
+2026-06-23 02:03:44 [main] DEBUG c.l.l.LendingServiceApplication - Running with Spring Boot v4.1.0, Spring v7.0.8
+2026-06-23 02:03:44 [main] INFO  c.l.l.LendingServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-23 02:03:44 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-06-23 02:03:44 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=lending-service, profiles=[default], label=null, version=null, state=null
+2026-06-23 02:03:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-23 02:03:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 1 JPA repository interface.
+2026-06-23 02:03:46 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=b7d060f0-4b59-3fa1-b706-7886d18a47b9
+2026-06-23 02:03:46 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2026-06-23 02:03:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2026-06-23 02:03:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-23 02:03:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-23 02:03:46 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1664 ms
+2026-06-23 02:03:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-23 02:03:46 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:fca39d58-8475-445c-8d21-65452701a84f user=SA
+2026-06-23 02:03:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-23 02:03:46 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23 02:03:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-23 02:03:47 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-23 02:03:47 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:fca39d58-8475-445c-8d21-65452701a84f]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: FCA39D58-8475-445C-8D21-65452701A84F/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23 02:03:48 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23 02:03:48 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23 02:03:48 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-23 02:03:48 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23 02:03:48 [main] INFO  o.s.c.o.FeignClientFactoryBean - For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2026-06-23 02:03:49 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-06-23 02:03:49 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-23 02:03:49 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-23 02:03:49 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-06-23 02:03:49 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-06-23 02:03:49 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-06-23 02:03:50 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-06-23 02:03:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-06-23 02:03:50 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-23 02:03:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1782169430174 with initial instances count: 4
+2026-06-23 02:03:50 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application LENDING-SERVICE with eureka with status UP
+2026-06-23 02:03:50 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1782169430179, current=UP, previous=STARTING]
+2026-06-23 02:03:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2026-06-23 02:03:50 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083: registering service...
+2026-06-23 02:03:50 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+2026-06-23 02:03:50 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8083
+2026-06-23 02:03:50 [main] INFO  c.l.l.LendingServiceApplication - Started LendingServiceApplication in 6.351 seconds (process running for 13.189)
+2026-06-23 02:03:50 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_LENDING-SERVICE/DESKTOP-O19AES4.mshome.net:lending-service:8083 - registration status: 204
+2026-06-23 02:03:50 [RMI TCP Connection(3)-192.168.1.131] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23 02:03:50 [RMI TCP Connection(3)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-23 02:03:50 [RMI TCP Connection(3)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms

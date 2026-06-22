@@ -17,17 +17,12 @@ public class LoanController {
         this.loanService = loanService;
     }
 
-    // 1. Display the page with the form and the table
     @GetMapping
-    public String viewLoansPage(Model model, @ModelAttribute("errorMessage") String errorMessage) {
+    public String viewLoansPage(Model model) {
         model.addAttribute("loans", loanService.getAllLoans());
-        if (errorMessage != null && !errorMessage.isEmpty()) {
-            model.addAttribute("errorMessage", errorMessage);
-        }
         return "loans";
     }
 
-    // 2. Accept form submissions from the user interface
     @PostMapping
     public String createLoanFromForm(@RequestParam Long userId,
                                      @RequestParam Long bookId,
@@ -36,16 +31,23 @@ public class LoanController {
             Loan newLoan = new Loan();
             newLoan.setUserId(userId);
             newLoan.setBookId(bookId);
-
-            // This invokes your business logic containing the OpenFeign client check
             loanService.createLoan(newLoan);
 
+            redirectAttributes.addFlashAttribute("successMessage", "Loan issued successfully!");
         } catch (Exception e) {
-            // If OpenFeign throws an exception because user/book doesn't exist, pass the error message back safely
             redirectAttributes.addFlashAttribute("errorMessage", "Failed to issue loan: " + e.getMessage());
         }
+        return "redirect:/loans";
+    }
 
-        // Refresh the page cleanly via redirect to show updated data or errors
+    @PostMapping("/{id}/return")
+    public String returnLoan(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
+        try {
+            loanService.deleteLoan(id);
+            redirectAttributes.addFlashAttribute("successMessage", "Book successfully returned!");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Failed to return book: " + e.getMessage());
+        }
         return "redirect:/loans";
     }
 }

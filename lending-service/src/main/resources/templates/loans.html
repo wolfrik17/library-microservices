@@ -15,22 +15,27 @@
         .btn { background-color: #2ecc71; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
         .btn:hover { background-color: #27ae60; }
         .alert-error { background-color: #e74c3c; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; }
+        .alert-success { background-color: #2ecc71; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; }
         table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
         th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd; }
         th { background-color: #34495e; color: white; }
+        .btn-danger { background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-danger:hover { background-color: #c0392b; }
     </style>
 </head>
 <body>
 
 <div class="portal-header">
-    <a href="http://localhost:8080/">Back to Portal</a>
+    <a href="http://localhost:8080/">🏠 Back to Portal</a>
 </div>
 
 <div class="container">
     <h2>📚 Lending Desk Operations</h2>
 
-    <div class="alert-error" th:if="${errorMessage}" th:text="${errorMessage}">
-        Error messages will appear here.
+    <div class="alert-error" th:if="${errorMessage != null and not #strings.isEmpty(errorMessage)}" th:text="${errorMessage}">
+    </div>
+
+    <div class="alert-success" th:if="${successMessage != null and not #strings.isEmpty(successMessage)}" th:text="${successMessage}">
     </div>
 
     <div class="card">
@@ -56,7 +61,7 @@
                 <th>Loan ID</th>
                 <th>User ID</th>
                 <th>Book ID</th>
-                <th>Status</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -64,7 +69,11 @@
                 <td th:text="${loan.id}">1</td>
                 <td th:text="${loan.userId}">101</td>
                 <td th:text="${loan.bookId}">502</td>
-                <td><span style="color: #2ecc71; font-weight: bold;">Active</span></td>
+                <td>
+                    <form th:action="@{/loans/{id}/return(id=${loan.id})}" method="POST" style="margin: 0;">
+                        <button type="submit" class="btn-danger">Return Book</button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>

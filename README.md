@@ -3,6 +3,8 @@
 ## 1. Descrierea Proiectului
 Acesta este un sistem modern și distribuit pentru managementul unei biblioteci, construit pe o arhitectură bazată pe microservicii folosind Spring Boot și Spring Cloud. Proiectul acoperă întregul flux de gestiune a cărților, utilizatorilor și împrumuturilor, având securitate distribuită, configurare centralizată și caching de înaltă performanță.
 
+Aplicația demonstrează concepte avansate de scalabilitate, toleranță la erori (Circuit Breaker) și inter-operabilitate (Feign).
+
 ## 2. Arhitectura Sistemului
 Aplicația a fost separată în microservicii independente pentru a asigura scalabilitatea și separarea responsabilităților:
 
@@ -29,3 +31,29 @@ Sistemul respectă cu strictețe cerința de modelare a datelor având relații 
 
 ![img.png](img.png)
 ---
+## 4. Instrucțiuni de Instalare și Rulare
+### 1. Start Infrastructure
+   Rulați docker-compose pentru a porni PostgreSQL și Redis:
+
+Bash
+docker-compose up -d
+### 2. Boot Up Microservices
+   Ordinea de pornire:
+
+* **Config Server (ConfigServerApplication)**
+* **Discovery Server (DiscoveryServerApplication)**
+* **User Service**
+* **Catalog Service**
+* **Lending Service**
+* **API Gateway**
+
+### 3. Accesul la Aplicație
+* Main Portal (UI): http://localhost:8080/
+
+* Eureka Dashboard: http://localhost:8761/
+
+* Credentiale Default: admin / password
+
+🛡️ Securitate & API
+* UI: Spring Security cu form-login.
+* M2M (Microservices): Lending Service utilizează FeignAuthInterceptor pentru a genera temporar JWT-uri interne securizate.

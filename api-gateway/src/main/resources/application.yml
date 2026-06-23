@@ -6,6 +6,9 @@ spring:
     name: api-gateway
   cloud:
     gateway:
+      default-filters:
+        - PreserveHostHeader
+
       discovery:
         locator:
           enabled: true

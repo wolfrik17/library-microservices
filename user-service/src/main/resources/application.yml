@@ -21,3 +21,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+
+jwt:
+  # Base64-encoded 256-bit key.
+  # In a real enterprise app, you would never hardcode this
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000 # 1 day in milliseconds

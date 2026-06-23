@@ -2,6 +2,7 @@ package com.library.catalog_service.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "reviews")
@@ -9,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Review {
+public class Review implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

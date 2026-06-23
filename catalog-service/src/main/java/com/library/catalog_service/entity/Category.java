@@ -3,6 +3,7 @@ package com.library.catalog_service.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "categories")
@@ -10,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Category {
+public class Category implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

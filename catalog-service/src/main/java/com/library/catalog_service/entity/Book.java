@@ -5,6 +5,7 @@ import lombok.*;
 import java.util.List;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "books")
@@ -12,7 +13,7 @@ import jakarta.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Book {
+public class Book implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

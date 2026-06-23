@@ -6198,3 +6198,113 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2026-06-23 11:22:31 [RMI TCP Connection(2)-192.168.1.131] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-06-23 11:22:31 [RMI TCP Connection(2)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2026-06-23 11:22:31 [RMI TCP Connection(2)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-06-23 11:25:29 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:27:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:27:30 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:30:29 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:32:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:32:30 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:35:29 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:36:48 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@79c07e55 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:36:48 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6ddd22db (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:36:50 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1715dbe3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:37:06 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6979d8fb (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:37:10 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@64443795 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:37:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:37:22 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5d37323d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:37:30 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:37:47 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@42c864a2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:38:06 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@63b777f8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:38:14 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@67062a93 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:38:17 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@434549e0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-23 11:40:29 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:42:21 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:42:30 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:45:29 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application CATALOG-SERVICE with eureka with status DOWN
+2026-06-23 11:45:29 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1782204329055, current=DOWN, previous=UP]
+2026-06-23 11:45:29 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CATALOG-SERVICE/DESKTOP-O19AES4.mshome.net:catalog-service:8082: registering service...
+2026-06-23 11:45:29 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-23 11:45:29 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CATALOG-SERVICE/DESKTOP-O19AES4.mshome.net:catalog-service:8082 - registration status: 204
+2026-06-23 11:45:29 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-06-23 11:45:29 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23 11:45:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-23 11:45:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-23 11:45:29 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-06-23 11:45:29 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:45:32 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-06-23 11:45:32 [DiscoveryClient-%d] WARN  c.n.discovery.TimedSupervisorTask - task supervisor shutting down, can't accept the task
+2026-06-23 11:45:32 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CATALOG-SERVICE/DESKTOP-O19AES4.mshome.net:catalog-service:8082 - deregister  status: 200
+2026-06-23 11:45:32 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-06-23 11:45:40 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-06-23 11:45:40 [main] INFO  c.l.c.CatalogServiceApplication - Starting CatalogServiceApplication using Java 21.0.11 with PID 8112 (C:\Users\Wolfrik\IdeaProjects\library-microservices\catalog-service\target\classes started by Wolfrik in C:\Users\Wolfrik\IdeaProjects\library-microservices)
+2026-06-23 11:45:40 [main] DEBUG c.l.c.CatalogServiceApplication - Running with Spring Boot v4.1.0, Spring v7.0.8
+2026-06-23 11:45:40 [main] INFO  c.l.c.CatalogServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-23 11:45:40 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-06-23 11:45:40 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=catalog-service, profiles=[default], label=null, version=null, state=null
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 140 ms. Found 5 JPA repository interfaces.
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.library.catalog_service.repository.AuthorRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.library.catalog_service.repository.BookRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.library.catalog_service.repository.CategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.library.catalog_service.repository.PublisherRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.library.catalog_service.repository.ReviewRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-23 11:45:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2026-06-23 11:45:42 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=d75b3ed4-3502-37fd-9b5e-59b0083bfab8
+2026-06-23 11:45:42 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-06-23 11:45:42 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-06-23 11:45:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-23 11:45:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-23 11:45:42 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2244 ms
+2026-06-23 11:45:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-23 11:45:43 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:2af0bb06-1492-4858-8698-344e1eda918c user=SA
+2026-06-23 11:45:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-23 11:45:43 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23 11:45:44 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-06-23 11:45:44 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-23 11:45:44 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:2af0bb06-1492-4858-8698-344e1eda918c]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 2AF0BB06-1492-4858-8698-344E1EDA918C/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23 11:45:45 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23 11:45:45 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-23 11:45:46 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-23 11:45:46 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23 11:45:47 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-06-23 11:45:47 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-23 11:45:47 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-06-23 11:45:47 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-06-23 11:45:47 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-06-23 11:45:47 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1782204347814 with initial instances count: 4
+2026-06-23 11:45:47 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CATALOG-SERVICE with eureka with status UP
+2026-06-23 11:45:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1782204347819, current=UP, previous=STARTING]
+2026-06-23 11:45:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-06-23 11:45:47 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CATALOG-SERVICE/DESKTOP-O19AES4.mshome.net:catalog-service:8082: registering service...
+2026-06-23 11:45:47 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2026-06-23 11:45:47 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
+2026-06-23 11:45:47 [main] INFO  c.l.c.CatalogServiceApplication - Started CatalogServiceApplication in 8.399 seconds (process running for 9.528)
+2026-06-23 11:45:47 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CATALOG-SERVICE/DESKTOP-O19AES4.mshome.net:catalog-service:8082 - registration status: 204
+2026-06-23 11:45:48 [RMI TCP Connection(1)-192.168.1.131] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23 11:45:48 [RMI TCP Connection(1)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-23 11:45:48 [RMI TCP Connection(1)-192.168.1.131] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms

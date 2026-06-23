@@ -1,64 +1,31 @@
-# Library Management System - Microservices
+# 📚 Library Management System - Microservices Architecture
 
-## Descrierea proiectului
-[Will add short description here]
+## 1. Descrierea Proiectului
+Acesta este un sistem modern și distribuit pentru managementul unei biblioteci, construit pe o arhitectură bazată pe microservicii folosind Spring Boot și Spring Cloud. Proiectul acoperă întregul flux de gestiune a cărților, utilizatorilor și împrumuturilor, având securitate distribuită, configurare centralizată și caching de înaltă performanță.
 
-## Arhitectură
-* **user-service:** Manages users and authentication.
-* **catalog-service:** Manages books, authors, and categories.
-* **lending-service:** Manages borrowing and returning books.
+## 2. Arhitectura Sistemului
+Aplicația a fost separată în microservicii independente pentru a asigura scalabilitatea și separarea responsabilităților:
 
-## Setup Instructions
-[Will add run instructions here]
+### Infrastructure Services
+* **API Gateway (`port: 8080`):** Punctul unic de intrare în sistem. Rutează dinamic request-urile și integrează Spring Cloud LoadBalancer.
+* **Discovery Server (`port: 8761`):** Serviciul de Service Registry bazat pe Netflix Eureka. Permite descoperirea automată a serviciilor.
+* **Config Server (`port: 8888`):** Centralizează configurațiile pentru toate microserviciile.
 
-## API Documentation
-[Will add Postman / Swagger links here]
+### Business Services
+* **User Service:** Gestionează entitățile de utilizator, rolurile (ADMIN / USER) și emite token-urile JWT. Parola este securizată folosind `BCrypt`.
+* **Catalog Service (`port: 8082`):** Gestionează cărțile, autorii, categoriile, editurile și recenziile. Interogările de citire sunt optimizate folosind **Redis Cache**.
+* **Lending Service:** Gestionează logica de business pentru împrumuturi și comunică inter-servicii cu User și Catalog Service.
 
-## Screenshots
-[Will add UI screenshots here]
+### Baze de Date & Caching
+* **PostgreSQL:** Baza de date relațională principală rulată în container Docker.
+* **Redis:** Caching layer de înaltă performanță pentru entitățile accesate frecvent (NoSQL).
 
-## Contribuții membrii echipei
-* Aioanei Cristian-Alexandru - Backend, Infrastructure, and UI.
+---
 
-## ER Diagram (Data Model)
-```mermaid
-erDiagram
-    USER ||--|| USER_PROFILE : "@OneToOne"
-    USER ||--o{ LOAN : "@OneToMany"
-    BOOK ||--o{ LOAN : "@OneToMany"
-    PUBLISHER ||--o{ BOOK : "@OneToMany"
-    BOOK }o--o{ CATEGORY : "@ManyToMany"
-    BOOK }o--o{ AUTHOR : "@ManyToMany"
+## 3. Modelul de Date (ER Diagram)
+Sistemul respectă cu strictețe cerința de modelare a datelor având relații complexe între entități:
+* `@OneToOne` / `@ManyToOne`: Legătura dintre Carte și Editură (`Publisher`), Carte și Recenzii (`Review`).
+* `@ManyToMany`: Legătura dintre Cărți și Autori (`Author`), Cărți și Categorii (`Category`).
 
-    USER {
-        Long id
-        String username
-        String role
-    }
-    USER_PROFILE {
-        Long id
-        String email
-        String address
-    }
-    BOOK {
-        Long id
-        String title
-        String isbn
-    }
-    PUBLISHER {
-        Long id
-        String name
-    }
-    CATEGORY {
-        Long id
-        String name
-    }
-    AUTHOR {
-        Long id
-        String name
-    }
-    LOAN {
-        Long id
-        LocalDate loanDate
-        LocalDate returnDate
-    }
+![img.png](img.png)
+---

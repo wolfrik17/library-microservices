@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/library_catalog_db
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: password # Change this to your local Postgres password
+    password: password
   jpa:
     hibernate:
       ddl-auto: update

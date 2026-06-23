@@ -6,3 +6,9 @@ Content-Type: application/json
   "username": "admin",
   "password": "password"
 }
+
+### Test 1: Fetch all books
+GET http://localhost:8082/api/books
+
+### Test 2: Fetch a specific book
+GET http://localhost:8082/api/books/1
